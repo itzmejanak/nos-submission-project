@@ -1,132 +1,138 @@
 :root {
-    --background-color: #121212; /* Dark background color for body */
-    --container-background: #1e1e1e; /* Dark gray background for reports container */
-    --submitted-background: #388e3cd0; /* Medium green background for submitted assignments */
-    --not-submitted-background: #d32f2fe6; /* Medium red background for not submitted assignments */
-    --submitted-border: #81c784; /* Soft green left border to indicate submission */
-    --late-submitted-background: #bf6810e6; /* Bright yellow background for late submitted assignments */
-    --late-submitted-border: #fdd835; /* Slightly darker yellow left border to indicate late submission */
-    --not-submitted-border: #d68585; /* Darker red left border to indicate non-submission */
-    --text-color: #ffffff; /* White text color for better visibility on dark background */
-    --input-border: #424242; /* Darker border color for input fields */
-    --input-background: #1e1e1e; /* Dark gray background for input fields */
-    --input-text-color: #df6209; /* White text color for input fields */
-    --report-id-color: #bbdefb; /* Light blue color for report IDs */
-    --assignment-entity-color: #e0e0e0; /* Light text color for assignment entity text */
-    --id-color: rgb(0, 0, 0); /* Bright blue color for IDs */
+   --background-color: #121212; /* Dark background color for body */
+   --container-background: #1e1e1e; /* Dark gray background for reports container */
+   --submitted-background: #388e3cd0; /* Medium green background for submitted assignments */
+   --not-submitted-background: #d32f2fe6; /* Medium red background for not submitted assignments */
+   --submitted-border: #81c784; /* Soft green left border to indicate submission */
+   --late-submitted-background: #bf6810e6; /* Bright yellow background for late submitted assignments */
+   --late-submitted-border: #fdd835; /* Slightly darker yellow left border to indicate late submission */
+   --not-submitted-border: #d68585; /* Darker red left border to indicate non-submission */
+   --text-color: #ffffff; /* White text color for better visibility on dark background */
+   --input-border: #424242; /* Darker border color for input fields */
+   --input-background: #1e1e1e; /* Dark gray background for input fields */
+   --input-text-color: #df6209; /* White text color for input fields */
+   --report-id-color: #bbdefb; /* Light blue color for report IDs */
+   --assignment-entity-color: #e0e0e0; /* Light text color for assignment entity text */
+   --id-color: rgb(0, 0, 0); /* Bright blue color for IDs */
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
-    width: 100%;
-    background-color: var(--background-color); /* Use variable for background color */
+   height: 100%;
+   width: 100%;
+   background-color: var(--background-color); /* Use variable for background color */
 }
 
 /* ReportsPage.css */
 
 .reports-container {
-    max-width: 1100px; /* Increased width for better layout */
-    margin: 0 auto;
-    padding-top: 20px; /* Adjust padding to prevent overlap with fixed heading */
-    padding-left: 20px; /* Add side padding */
-    padding-right: 20px; /* Add side padding */
-    font-family: 'Arial', sans-serif;
+   max-width: 1100px; /* Increased width for better layout */
+   margin: 0 auto;
+   padding-top: 20px; /* Adjust padding to prevent overlap with fixed heading */
+   padding-left: 20px; /* Add side padding */
+   padding-right: 20px; /* Add side padding */
+   font-family: 'Arial', sans-serif;
 }
 
 .heading-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    background-color: var(--container-background); /* Use variable for heading background */
-    z-index: 1000; /* Ensure it stays on top */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow for separation */
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   padding: 20px;
+   background-color: var(--container-background); /* Use variable for heading background */
+   z-index: 1000; /* Ensure it stays on top */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow for separation */
 }
 
 .heading-title {
-    margin-bottom: 10px; /* Spacing below the heading */
-    color: var(--text-color);
-    font-size: 20px;
+   margin-bottom: 10px; /* Spacing below the heading */
+   color: var(--text-color);
+   font-size: 20px;
 }
 
 .search-input {
-    margin-top: 10px;
-    padding: 12px; /* Increased padding for better touch targets */
-    width: 100%;
-    max-width: 450px; /* Slightly wider input field */
-    border: 1px solid var(--input-border); /* Use variable for input border color */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Larger font size for readability */
-    background-color: var(--input-background); /* Use variable for input field background color */
-    color: var(--input-text-color); /* Use variable for input field text color */
+   margin-top: 10px;
+   padding: 12px; /* Increased padding for better touch targets */
+   width: 100%;
+   max-width: 450px; /* Slightly wider input field */
+   border: 1px solid var(--input-border); /* Use variable for input border color */
+   border-radius: 5px; /* Rounded corners */
+   font-size: 16px; /* Larger font size for readability */
+   background-color: var(--input-background); /* Use variable for input field background color */
+   color: var(--input-text-color); /* Use variable for input field text color */
 }
 
 .totals {
-   margin-top: 20px;
-   font-size: 18px; /* Increased font size for emphasis */
-   color: var(--text-color); /* Use variable for text color */
+  margin-top: 20px;
+  font-size: 18px; /* Increased font size for emphasis */
+  color: var(--text-color); /* Use variable for text color */
 }
 
 .total-submitted,
 .total-not-submitted {
-   margin-bottom: 10px; 
+  margin-bottom: 10px; 
+  cursor: pointer;
+}
+
+.total-late {
+  margin-bottom: 10px; 
+  cursor: pointer;
 }
 
 .body-container {
-   margin-top: 20px; /* Additional spacing between heading and body content */ 
+  margin-top: 20px; /* Additional spacing between heading and body content */ 
 }
 
 .reports-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid layout */
-   gap: 20px; /* Space between cards */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid layout */
+  gap: 20px; /* Space between cards */
 }
 
 .report-card {
-   border-radius: 10px; /* Rounded corners with a larger radius */
-   padding: 20px; /* More padding for content spacing */
-   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6); /* Enhanced shadow effect on dark backgrounds */
-   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects on hover */
+  border-radius: 10px; /* Rounded corners with a larger radius */
+  padding: 20px; /* More padding for content spacing */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6); /* Enhanced shadow effect on dark backgrounds */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects on hover */
 }
 
 .report-card:hover {
-   transform: translateY(-5px); /* Lift effect on hover */
-   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Deeper shadow on hover */
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Deeper shadow on hover */
 }
 
 .report-card.submitted {
-   background-color: var(--submitted-background); 
-   border-left: 5px solid var(--submitted-border); 
+  background-color: var(--submitted-background); 
+  border-left: 5px solid var(--submitted-border); 
 }
 
 .report-card.not-submitted {
-   background-color: var(--not-submitted-background); 
-   border-left: 5px solid var(--not-submitted-border);
+  background-color: var(--not-submitted-background); 
+  border-left: 5px solid var(--not-submitted-border);
 }
 
 .report-card.late-submitted { 
-   background-color :var(--late-submitted-background) ; 
-   border-left :5px solid var(--late-submitted-border) ; 
+  background-color :var(--late-submitted-background) ; 
+  border-left :5px solid var(--late-submitted-border) ; 
 }
 
 .report-id {
-   margin-top :0 ;
-   font-size :20px ;
-   color: var(--report-id-color); 
+  margin-top :0 ;
+  font-size :20px ;
+  color: var(--report-id-color); 
 }
 
 .assignment-name,
 .assignment-status,
 .assignment-content {
-   margin :8px 0 ;
-   color: var(--assignment-entity-color);
+  margin :8px 0 ;
+  color: var(--assignment-entity-color);
 }
 
 /* Additional styling to enhance card content appearance */
@@ -134,155 +140,211 @@ html, body {
 .assignment-name strong,
 .assignment-status strong,
 .assignment-content strong {
-   color :var(--text-color); 
-   text-transform :uppercase; 
-   font-weight:bold;
-   letter-spacing:.5px;
+  color :var(--text-color); 
+  text-transform :uppercase; 
+  font-weight:bold;
+  letter-spacing:.5px;
 }
 
 .report-card p:not(:last-child) {
-   border-bottom :1px solid rgba(255,255,255,.2);
-   padding-bottom:.5em;
-   margin-bottom:.5em;
+  border-bottom :1px solid rgba(255,255,255,.2);
+  padding-bottom:.5em;
+  margin-bottom:.5em;
 }
 
 .spanJi{
-    color: var(--id-color);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   color: var(--id-color);
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .info-tab{
-   display: flex;
-   justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .guide{
-   display: flex;
-   padding-right: 10px;
-   align-items: center;
-   justify-content: space-between;
-   gap: 20px;
+  display: flex;
+  padding-right: 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .box {
-   display: flex;
-   gap: 5px;
-   flex-direction: row;
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
 }
 
 .box .box-item {
-   padding: 10px;
-   border-radius: 10px;
-   border-left: 2px solid var(--submitted-border); 
-   background-color: var(--submitted-background);
+  padding: 9px;
+  border-radius: 100px;
+  border-left: 2px solid var(--submitted-border); 
+  background-color: var(--submitted-background);
 }
 
 .box .box-item1 {
-   padding: 10px;
-   border-radius: 10px;
-   border-left: 2px solid var(--not-submitted-border); 
-   background-color: var(--not-submitted-background);
+  padding: 9px;
+  border-radius: 10px;
+  border-left: 2px solid var(--not-submitted-border); 
+  background-color: var(--not-submitted-background);
 }
 
 
 .box .box-item2 {
-   padding: 10px;
-   border-radius: 10px;
-   border-left: 2px solid var(--late-submitted-border); 
-   background-color: var(--late-submitted-background);
+  padding: 9px;
+  border-radius: 10px;
+  border-left: 2px solid var(--late-submitted-border); 
+  background-color: var(--late-submitted-background);
 }
 
 .color-guide{
-   color: var(--text-color);
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: var(--text-color);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.calculateText{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.hover-view,
+.hover-view1,
+.hover-view2 {
+ /* position: absolute; */
+ visibility: hidden;
+ font-style: italic;
+  color: #5f6060;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateX(10px);
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calculateText:hover .hover-view,
+.calculateText:hover .hover-view1,
+.calculateText:hover .hover-view2 {
+ visibility: visible;
+ transform: translateX(0);
+ transition: transform 0.9s ease-in;
+ opacity: 1;
 }
 /* Responsive adjustments */
 
 @media (max-width :600px) {
-   .reports-container {
-       padding-left :10px ; 
-       padding-right :10px ; 
-       padding-top :80px ; 
-   }
+  .reports-container {
+      padding-left :10px ; 
+      padding-right :10px ; 
+      padding-top :80px ; 
+  }
 
-   .search-input {
-       max-width:none; 
-       font-size :14px ; 
-   }
+  .search-input {
+      max-width:none; 
+      font-size :14px ; 
+  }
 
-   .totals {
-       font-size :16px ; 
-   }
+  .totals {
+      font-size :16px ; 
+  }
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
 
-   .info-tab{
-      display: flex;
-      flex-direction: row;
-   }
-   .guide {
-       flex-direction: column; 
-       gap: 0;
-       margin-top: 10px;
-       margin-bottom: 10px;
-   }
+  .info-tab{
+     display: flex;
+     flex-direction: row;
+  }
+  .guide {
+      flex-direction: column; 
+      gap: 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
 
-   .box {
-       flex-direction: row; /* Stack box items vertically */
-       width: 100%; /* Full width for box container */
-   }
+  .box {
+      flex-direction: row; /* Stack box items vertically */
+      width: 100%; /* Full width for box container */
+  }
 
-   .box .box-item,
-   .box .box-item1,
-   .box .box-item2 {
-       padding: 5px; /* Full width for each box item */
-       margin-bottom: 5px; /* Add spacing between items */
-       min-width: auto; /* Remove minimum width constraint */
-   }
+  .box .box-item,
+  .box .box-item1,
+  .box .box-item2 {
+      padding: 5px; /* Full width for each box item */
+      margin-bottom: 5px; /* Add spacing between items */
+      min-width: auto; /* Remove minimum width constraint */
+  }
 }
 
-@media (max-width: 480px) {
-   .guide {
-       gap: 10px; /* Reduce gap on very small screens */
-       padding-right: 5px; /* Adjust padding for smaller screens */
-   }
+.emojiIcon{
+   font-size: 15px;
+   color: rgb(5, 201, 41);
+   padding-left: 10px;
+}
 
-   .color-guide {
-       font-size: 14px; /* Adjust font size for better readability on small screens */
-   }
+
+@media (max-width: 480px) {
+  .guide {
+      gap: 10px; /* Reduce gap on very small screens */
+      padding-right: 5px; /* Adjust padding for smaller screens */
+  }
+
+  .color-guide {
+      font-size: 14px; /* Adjust font size for better readability on small screens */
+  }
 }
 
 
 /* For screens with a maximum width of 768px (e.g., tablets and smaller laptops) */
 @media only screen and (max-width: 768px) {
-   .heading-title {
-     font-size: 24px; /* adjust font size of h1 element */
-   }
-   .report-id {
-     font-size: 18px; /* adjust font size of h3 element */
-   }
-   .total-submitted, .total-not-submitted, .color-guide, .assignment-name, .assignment-status, .assignment-content {
-     font-size: 16px; /* adjust font size of p elements */
-   }
-   .no-reports-message {
-     font-size: 18px; /* adjust font size of p element with class no-reports-message */
-   }
- }
+  .heading-title {
+    font-size: 24px; /* adjust font size of h1 element */
+  }
+  .report-id {
+    font-size: 18px; /* adjust font size of h3 element */
+  }
  
- /* For screens with a maximum width of 480px (e.g., mobile devices) */
- @media only screen and (max-width: 480px) {
-   .heading-title {
-     font-size: 20px; /* adjust font size of h1 element */
-   }
-   .report-id {
-     font-size: 16px; /* adjust font size of h3 element */
-   }
-   .total-submitted, .total-not-submitted, .color-guide, .assignment-name, .assignment-status, .assignment-content {
-     font-size: 14px; /* adjust font size of p elements */
-   }
-   .no-reports-message {
-     font-size: 16px; /* adjust font size of p element with class no-reports-message */
-   }
- }
+  .total-submitted, .total-not-submitted, .color-guide, .assignment-name, .assignment-status, .assignment-content {
+    font-size: 16px; /* adjust font size of p elements */
+  }
+  .no-reports-message {
+    font-size: 18px; /* adjust font size of p element with class no-reports-message */
+  }
+
+  .hover-view,
+  .hover-view1,
+  .hover-view2{
+     font-size: 12px;
+  }
+}
+
+/* For screens with a maximum width of 480px (e.g., mobile devices) */
+@media only screen and (max-width: 480px) {
+  .heading-title {
+    font-size: 20px; /* adjust font size of h1 element */
+  }
+  .report-id {
+    font-size: 16px; /* adjust font size of h3 element */
+  }
+  .total-submitted, .total-not-submitted, .color-guide, .assignment-name, .assignment-status, .assignment-content {
+    font-size: 14px; /* adjust font size of p elements */
+  }
+  .no-reports-message {
+    font-size: 16px; /* adjust font size of p element with class no-reports-message */
+  }
+
+  .hover-view,
+  .hover-view1,
+  .hover-view2{
+     position: absolute;
+     visibility: hidden;
+  }
+
+  .calculateText:hover .hover-view,
+.calculateText:hover .hover-view1,
+.calculateText:hover .hover-view2 {
+ visibility: hidden;
+}
+}
