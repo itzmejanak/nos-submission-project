@@ -13,6 +13,7 @@ const ReportsPage = () => {
 
     useEffect(() => {
         const getReports = async () => {
+            document.title = 'Nos Checker';
             const result = await fetchData();
             setReports(result.reports);
             setLoading(false);
