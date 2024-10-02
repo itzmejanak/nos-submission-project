@@ -27,8 +27,10 @@ const ReportsPage = () => {
 
     const filteredReports = reports.filter(report =>
         report.assignments.some(assignment =>
-            assignment.assignmentReport.name.toLowerCase().includes(searchTerm.toLowerCase())
-        ) || report.id.includes(searchTerm)
+            assignment.assignmentReport.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            report.id.includes(searchTerm) ||
+            assignment.assignmentReport.status.toLowerCase().includes(searchTerm.toLowerCase())
+        )
     );
 
     if (loading) {
