@@ -253,3 +253,36 @@ html, body {
        font-size: 14px; /* Adjust font size for better readability on small screens */
    }
 }
+
+
+/* For screens with a maximum width of 768px (e.g., tablets and smaller laptops) */
+@media only screen and (max-width: 768px) {
+   .heading-title {
+     font-size: 24px; /* adjust font size of h1 element */
+   }
+   .report-id {
+     font-size: 18px; /* adjust font size of h3 element */
+   }
+   .total-submitted, .total-not-submitted, .color-guide, .assignment-name, .assignment-status, .assignment-content {
+     font-size: 16px; /* adjust font size of p elements */
+   }
+   .no-reports-message {
+     font-size: 18px; /* adjust font size of p element with class no-reports-message */
+   }
+ }
+ 
+ /* For screens with a maximum width of 480px (e.g., mobile devices) */
+ @media only screen and (max-width: 480px) {
+   .heading-title {
+     font-size: 20px; /* adjust font size of h1 element */
+   }
+   .report-id {
+     font-size: 16px; /* adjust font size of h3 element */
+   }
+   .total-submitted, .total-not-submitted, .color-guide, .assignment-name, .assignment-status, .assignment-content {
+     font-size: 14px; /* adjust font size of p elements */
+   }
+   .no-reports-message {
+     font-size: 16px; /* adjust font size of p element with class no-reports-message */
+   }
+ }
