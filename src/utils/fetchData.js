@@ -1,8 +1,10 @@
 // utils/fetchReports.js
+
 export async function fetchData() {
     try {
-        const res = await fetch("/.netlify/functions/fetchData");
+        const res = await fetch("http://172.104.50.136:8080/");
         
+        // Check if the response is OK
         if (!res.ok) {
             throw new Error(`HTTP error! status: ${res.status}`);
         }
