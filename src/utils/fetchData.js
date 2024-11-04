@@ -2,7 +2,7 @@
 
 export async function fetchData() {
     try {
-        const res = await fetch("http://172.104.50.136:8080/");
+        const res = await fetch("https://ronb.cote.ws/nos");
         
         // Check if the response is OK
         if (!res.ok) {
