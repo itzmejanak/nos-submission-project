@@ -15,7 +15,7 @@ const ReportsPage = () => {
     const getReports = async () => {
       document.title = "Nos Checker";
       const result = await fetchData();
-      setReports(result.reports);
+      setReports(result);
       setLoading(false);
     };
 
@@ -26,16 +26,13 @@ const ReportsPage = () => {
     setSearchTerm(event.target.value);
   };
 
+  // Filtered reports based on search term
   const filteredReports = reports.filter((report) =>
     report.assignments.some(
       (assignment) =>
-        assignment.assignmentReport.name
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase()) ||
-        report.id.includes(searchTerm) ||
-        assignment.assignmentReport.status
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase())
+        assignment.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        report.id.toString().includes(searchTerm) ||
+        assignment.status.toLowerCase().includes(searchTerm.toLowerCase())
     )
   );
 
@@ -45,18 +42,14 @@ const ReportsPage = () => {
 
   // Calculate totals
   const totalSubmitted = reports.filter((report) =>
-    report.assignments.every(
-      (assignment) => assignment.assignmentReport.status === "Submitted"
-    )
+    report.assignments.every((assignment) => assignment.status === "Submitted")
   ).length;
 
   const totalLate = reports.filter((report) =>
-    report.assignments.every(
-      (assignment) => assignment.assignmentReport.status === "Late"
-    )
+    report.assignments.every((assignment) => assignment.status === "Late")
   ).length;
 
-  const totalNotSubmitted = reports.length - totalSubmitted + totalLate;
+  const totalNotSubmitted = reports.length - totalSubmitted - totalLate;
 
   return (
     <div className="reports-container">
@@ -117,7 +110,7 @@ const ReportsPage = () => {
           {filteredReports.map((report) =>
             report.assignments.map((assignment, index) => {
               // Determine card color based on assignment status
-              const status = assignment.assignmentReport.status;
+              const status = assignment.status;
               const cardClass =
                 status === "Submitted"
                   ? "report-card submitted"
@@ -131,16 +124,10 @@ const ReportsPage = () => {
                     ID: <span className="spanJi">{report.id}</span>
                   </h3>
                   <p className="assignment-name">
-                    Assignment Name:{" "}
-                    <strong>{assignment.assignmentReport.name}</strong>
+                    Assignment Name: <strong>{assignment.name}</strong>
                   </p>
                   <p className="assignment-status">
-                    Status:{" "}
-                    <strong>{assignment.assignmentReport.status}</strong>
-                  </p>
-                  <p className="assignment-content">
-                    Content:{" "}
-                    <strong>{assignment.assignmentReport.content}</strong>
+                    Status: <strong>{assignment.status}</strong>
                   </p>
                 </div>
               );
