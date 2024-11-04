@@ -1,7 +1,7 @@
 // netlify/functions/fetchData.js
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
-exports.handler = async (event, context) => {
+export async function handler(event, context) {
     try {
         const res = await fetch("http://172.104.50.136:8080/");
         
@@ -25,4 +25,4 @@ exports.handler = async (event, context) => {
             body: JSON.stringify({ error: 'Internal Server Error' }),
         };
     }
-};
+}

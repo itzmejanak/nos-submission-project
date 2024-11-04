@@ -1,5 +1,4 @@
 // utils/fetchReports.js
-
 export async function fetchData() {
     try {
         const res = await fetch("/.netlify/functions/fetchData");
